@@ -159,10 +159,10 @@ export const environment = {
       thumbnail: './assets/media/demos/demo20.png',
     },
   },
-  URL_BACKEND: 'https://apiaws.tiendaperuvian.com/',
-  URL_SERVICIOS: 'https://apiaws.tiendaperuvian.com/api',
-  URL_FRONTED: 'https://adminaws.tiendaperuvian.com',
-  URL_TIENDA: 'https://tiendaaws.tiendaperuvian.com',
+  URL_BACKEND: 'https://apitiendamaquimotora.enfocussoluciones.pe/',
+  URL_SERVICIOS: 'https://apitiendamaquimotora.enfocussoluciones.pe/api',
+  URL_FRONTED: 'https://admintiendamaquimotora.enfocussoluciones.pe',
+  URL_TIENDA: 'https://tiendamaquimotora.enfocussoluciones.pe',
 };
 
 /*
