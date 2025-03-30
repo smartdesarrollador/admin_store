@@ -33,12 +33,12 @@ export class AuthService implements OnDestroy {
     this.currentUserSubject.next(user);
   }
 
-  user:any = null;
-  token:any = null;
+  user: any = null;
+  token: any = null;
   constructor(
     private authHttpService: AuthHTTPService,
     private router: Router,
-    private http: HttpClient,
+    private http: HttpClient
   ) {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
     this.currentUserSubject = new BehaviorSubject<UserType>(undefined);
@@ -51,17 +51,19 @@ export class AuthService implements OnDestroy {
   // public methods
   login(email: string, password: string): Observable<any> {
     this.isLoadingSubject.next(true);
-    return this.http.post(URL_SERVICIOS+"/auth/login",{email, password}).pipe(
-      map((auth: any) => {
-        const result = this.setAuthFromLocalStorage(auth);
-        return result;
-      }),
-      catchError((err) => {
-        console.error('err', err);
-        return of(undefined);
-      }),
-      finalize(() => this.isLoadingSubject.next(false))
-    );
+    return this.http
+      .post(URL_SERVICIOS + '/auth/login', { email, password })
+      .pipe(
+        map((auth: any) => {
+          const result = this.setAuthFromLocalStorage(auth);
+          return result;
+        }),
+        catchError((err) => {
+          console.error('err', err);
+          return of(undefined);
+        }),
+        finalize(() => this.isLoadingSubject.next(false))
+      );
   }
 
   logout() {
@@ -121,6 +123,9 @@ export class AuthService implements OnDestroy {
     if (auth && auth.access_token) {
       localStorage.setItem('user', JSON.stringify(auth.user));
       localStorage.setItem('token', auth.access_token);
+      // Actualiza también las propiedades de la clase
+      this.user = auth.user;
+      this.token = auth.access_token;
       return true;
     }
     return false;
@@ -128,13 +133,13 @@ export class AuthService implements OnDestroy {
 
   private getAuthFromLocalStorage(): any | undefined {
     try {
-      const lsValue = localStorage.getItem("user");
+      const lsValue = localStorage.getItem('user');
       if (!lsValue) {
         return undefined;
       }
 
-      this.token = localStorage.getItem("token")
-      this.user =JSON.parse(lsValue);
+      this.token = localStorage.getItem('token');
+      this.user = JSON.parse(lsValue);
       const authData = this.user;
       return authData;
     } catch (error) {

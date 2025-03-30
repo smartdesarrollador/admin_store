@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initForm();
-    // get return url from route parameters or default to '/'
+    // Establecer explícitamente el dashboard como ruta de retorno
     this.returnUrl =
-      this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
+      this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
   }
 
   // convenience getter for easy access to form fields
@@ -77,13 +77,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     const loginSubscr = this.authService
       .login(this.f.email.value, this.f.password.value)
       .pipe(first())
-      .subscribe((user: any) => {
-        if (user) {
-          // this.router.navigate([this.returnUrl]);
-          document.location.reload();
-        } else {
+      .subscribe({
+        next: (user: any) => {
+          if (user) {
+            console.log('Login exitoso, redirigiendo a:', '/dashboard');
+            this.router.navigate(['/dashboard']);
+          } else {
+            console.log('Login fallido');
+            this.hasError = true;
+          }
+        },
+        error: (error) => {
+          console.error('Error en login:', error);
           this.hasError = true;
-        }
+        },
       });
     this.unsubscribe.push(loginSubscr);
   }
