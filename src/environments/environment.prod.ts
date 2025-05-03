@@ -159,10 +159,10 @@ export const environment = {
       thumbnail: './assets/media/demos/demo20.png',
     },
   },
-  URL_BACKEND: 'https://apitiendamaquimotora.enfocussoluciones.pe/',
-  URL_SERVICIOS: 'https://apitiendamaquimotora.enfocussoluciones.pe/api',
-  URL_FRONTED: 'https://admintiendamaquimotora.enfocussoluciones.pe',
-  URL_TIENDA: 'https://tiendamaquimotora.enfocussoluciones.pe',
+  URL_BACKEND: 'https://apitiendamaqui.iatecdigital.com/',
+  URL_SERVICIOS: 'https://apitiendamaqui.iatecdigital.com/api',
+  URL_FRONTED: 'https://admintiendamaquimotora.enfocussoluciones.com',
+  URL_TIENDA: 'https://tiendamaquimotora.enfocussoluciones.com',
 };
 
 /*

@@ -23,18 +23,24 @@
 
   <div class="menu-item px-5">
     <a routerLink="/crafted/pages/profile" class="menu-link px-5">
-      My Profile
+      Mi Perfil
     </a>
   </div>
 
-  <div class="menu-item px-5">
-    <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">
-      <span class="menu-text">My Projects</span>
+  <!-- <div class="menu-item px-5">
+    <a
+      class="menu-link px-5 cursor-pointer"
+      placement="top-start"
+      ngbTooltip="Próximamente"
+    >
+      <span class="menu-text">Mis Proyectos</span>
       <span class="menu-badge">
-        <span class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
+        <span class="badge badge-light-danger badge-circle fw-bolder fs-7"
+          >3</span
+        >
       </span>
     </a>
-  </div>
+  </div> -->
 
   <div
     class="menu-item px-5"
@@ -43,30 +49,49 @@
     data-kt-menu-flip="bottom"
   >
     <a class="menu-link px-5 cursor-pointer">
-      <span class="menu-title">My Subscription</span>
+      <span class="menu-title">Mi Suscripción</span>
       <span class="menu-arrow"></span>
     </a>
 
     <div class="menu-sub menu-sub-dropdown w-175px py-4">
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Referrals</a>
+        <a
+          class="menu-link px-5 cursor-pointer"
+          placement="top-start"
+          ngbTooltip="Próximamente"
+          >Referencias</a
+        >
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Billing</a>
+        <a
+          class="menu-link px-5 cursor-pointer"
+          placement="top-start"
+          ngbTooltip="Próximamente"
+          >Facturación</a
+        >
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Payments</a>
+        <a
+          class="menu-link px-5 cursor-pointer"
+          placement="top-start"
+          ngbTooltip="Próximamente"
+          >Pagos</a
+        >
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link d-flex flex-stack px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">
-          Statements
+        <a
+          class="menu-link d-flex flex-stack px-5 cursor-pointer"
+          placement="top-start"
+          ngbTooltip="Próximamente"
+        >
+          Estados de Cuenta
           <i
             class="fas fa-exclamation-circle ms-2 fs-7"
             data-bs-toggle="tooltip"
-            title="View your statements"
+            title="Ver tus estados de cuenta"
           ></i>
         </a>
       </div>
@@ -85,7 +110,7 @@
               defaultChecked="{true}"
               name="notifications"
             />
-            <span class="form-check-label text-muted fs-7">Notifications</span>
+            <span class="form-check-label text-muted fs-7">Notificaciones</span>
           </label>
         </div>
       </div>
@@ -93,12 +118,17 @@
   </div>
 
   <div class="menu-item px-5">
-    <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">My Statements</a>
+    <a
+      class="menu-link px-5 cursor-pointer"
+      placement="top-start"
+      ngbTooltip="Próximamente"
+      >Mis Estados de Cuenta</a
+    >
   </div>
 
   <div class="separator my-2"></div>
 
-  <div
+  <!-- <div
     class="menu-item px-5"
     data-kt-menu-trigger="hover"
     data-kt-menu-placement="left-start"
@@ -106,19 +136,9 @@
   >
     <a class="menu-link px-5 cursor-pointer">
       <span class="menu-title position-relative">
-        Language
+        Idioma
         <span
-          class="
-            fs-8
-            rounded
-            bg-light
-            px-3
-            py-2
-            position-absolute
-            translate-middle-y
-            top-50
-            end-0
-          "
+          class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0"
         >
           {{ language.name }}{{ " " }}
           <img
@@ -147,15 +167,17 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="menu-item px-5 my-1">
     <a routerLink="/crafted/account/settings" class="menu-link px-5">
-      Account Settings
+      Configuración de Cuenta
     </a>
   </div>
 
   <div class="menu-item px-5">
-    <a (click)="logout()" class="menu-link px-5 cursor-pointer"> Sign Out </a>
+    <a (click)="logout()" class="menu-link px-5 cursor-pointer">
+      Cerrar Sesión
+    </a>
   </div>
 </ng-container>
